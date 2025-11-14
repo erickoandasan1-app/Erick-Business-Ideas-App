@@ -1,20 +1,26 @@
-
 import { GoogleGenAI, Type } from "@google/genai";
 import { AIEnhancement } from '../types.ts';
 
-const API_KEY = process.env.API_KEY;
+let ai: GoogleGenAI | null = null;
 
-if (!API_KEY) {
-  console.warn("API_KEY environment variable not set. AI features will not be available.");
+/**
+ * Lazily initializes and returns the GoogleGenAI client.
+ * This prevents the app from crashing on load if `process.env.API_KEY`
+ * isn't available in the browser environment immediately.
+ */
+function getAiClient(): GoogleGenAI {
+  if (!ai) {
+    const apiKey = process.env.API_KEY;
+    if (!apiKey) {
+      console.error("API_KEY environment variable not set. AI features will not be available.");
+      throw new Error("Gemini API key is not configured.");
+    }
+    ai = new GoogleGenAI({ apiKey });
+  }
+  return ai;
 }
 
-const ai = new GoogleGenAI({ apiKey: API_KEY! });
-
 export const enhanceIdeaWithAI = async (title: string, description: string): Promise<AIEnhancement> => {
-  if (!API_KEY) {
-    throw new Error("Gemini API key is not configured.");
-  }
-
   const prompt = `
     Analyze the following business idea and provide enhancements.
     Title: "${title}"
@@ -29,7 +35,8 @@ export const enhanceIdeaWithAI = async (title: string, description: string): Pro
   `;
 
   try {
-    const response = await ai.models.generateContent({
+    const client = getAiClient();
+    const response = await client.models.generateContent({
       model: "gemini-2.5-flash",
       contents: prompt,
       config: {
