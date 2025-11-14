@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { Idea } from '../types';
-import { ArrowLeftIcon, PencilIcon, ArchiveIcon, TrashIcon, CurrencyDollarIcon, UserGroupIcon, TagIcon } from './Icons';
-import CategoryPill from './CategoryPill';
+import { Idea } from '../types.ts';
+import { ArrowLeftIcon, PencilIcon, ArchiveIcon, TrashIcon, CurrencyDollarIcon, UserGroupIcon, TagIcon } from './Icons.tsx';
+import CategoryPill from './CategoryPill.tsx';
 
 interface IdeaDetailViewProps {
   idea: Idea;

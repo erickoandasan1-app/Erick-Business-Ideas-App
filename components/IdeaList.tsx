@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { Idea } from '../types';
-import IdeaCard from './IdeaCard';
-import { SearchIcon, StarIcon, ArchiveIcon, DocumentTextIcon } from './Icons';
+import { Idea } from '../types.ts';
+import IdeaCard from './IdeaCard.tsx';
+import { SearchIcon, StarIcon, ArchiveIcon, DocumentTextIcon } from './Icons.tsx';
 
 interface IdeaListProps {
   ideas: Idea[];

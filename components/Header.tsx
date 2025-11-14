@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { LightbulbIcon } from './Icons';
+import { LightbulbIcon } from './Icons.tsx';
 
 interface HeaderProps {
   onLogoClick: () => void;

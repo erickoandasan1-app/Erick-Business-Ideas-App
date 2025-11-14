@@ -1,8 +1,8 @@
 
 import React, { useState, useCallback } from 'react';
-import { Idea, AIEnhancement } from '../types';
-import { enhanceIdeaWithAI } from '../services/geminiService';
-import { SparklesIcon, MagicWandIcon } from './Icons';
+import { Idea, AIEnhancement } from '../types.ts';
+import { enhanceIdeaWithAI } from '../services/geminiService.ts';
+import { SparklesIcon, MagicWandIcon } from './Icons.tsx';
 
 interface IdeaFormProps {
   ideaToEdit?: Idea;

@@ -22,6 +22,7 @@
         }
       }
     </script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="importmap">
 {
   "imports": {
@@ -35,6 +36,6 @@
 </head>
   <body class="bg-base-100 text-base-content">
     <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
+    <script type="text/babel" data-type="module" data-presets="react,typescript" src="/index.tsx"></script>
   </body>
 </html>

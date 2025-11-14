@@ -1,11 +1,11 @@
 
 import React, { useState, useMemo, useCallback } from 'react';
-import { Idea, View } from './types';
-import Header from './components/Header';
-import IdeaList from './components/IdeaList';
-import IdeaForm from './components/IdeaForm';
-import IdeaDetailView from './components/IdeaDetailView';
-import { PlusIcon } from './components/Icons';
+import { Idea, View } from './types.ts';
+import Header from './components/Header.tsx';
+import IdeaList from './components/IdeaList.tsx';
+import IdeaForm from './components/IdeaForm.tsx';
+import IdeaDetailView from './components/IdeaDetailView.tsx';
+import { PlusIcon } from './components/Icons.tsx';
 
 const App: React.FC = () => {
   const [ideas, setIdeas] = useState<Idea[]>(() => {

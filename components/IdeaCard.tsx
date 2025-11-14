@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { Idea } from '../types';
-import { StarIcon, FilledStarIcon } from './Icons';
-import CategoryPill from './CategoryPill';
+import { Idea } from '../types.ts';
+import { StarIcon, FilledStarIcon } from './Icons.tsx';
+import CategoryPill from './CategoryPill.tsx';
 
 interface IdeaCardProps {
   idea: Idea;
